@@ -60,7 +60,8 @@ public class Word {
                     if (ch[i] == tofind[j]) {
                         if (i == j) {
                             for_b++;
-                        } else if (ch[i] != tofind[j]) {
+                            break;
+                        } else {
                             for_c++;
                         }
                     }
