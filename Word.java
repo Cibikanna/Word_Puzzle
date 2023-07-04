@@ -45,7 +45,7 @@ public class Word {
         int k = 0;
         list = Insert(list, "____");
         Print(list);
-        String words[] = { "good", "late" };/* "flux","mate","data","word","bold","lord"}; */
+        String words[] = { "good", "late", "flux", "mate", "data", "word", "bold", "lord" };
         int random_index = (int) (Math.random() * words.length);
         char tofind[] = words[random_index].toCharArray();
         while (true) {
