@@ -50,6 +50,10 @@ public class Word {
         char tofind[] = words[random_index].toCharArray();
         while (true) {
             String str = sc.nextLine();
+            if (str.length() != 4) {
+                System.out.println("Please enter the valid word");
+                continue;
+            }
 
             char ch[] = str.toCharArray();
 
