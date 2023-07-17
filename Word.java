@@ -45,10 +45,11 @@ public class Word {
         int k = 0;
         list = Insert(list, "____");
         Print(list);
-        String words[] = { "good", "late", "flux", "mate", "data", "word", "bold", "lord" };
+        String words[] = { /*"good", "late", */"flux"/*, "mate", "data", "word", "bold", "lord" */};
         int random_index = (int) (Math.random() * words.length);
-        char tofind[] = words[random_index].toCharArray();
+        //char tofind[] = words[random_index].toCharArray();
         while (true) {
+            char tofind[] = words[random_index].toCharArray();
             String str = sc.nextLine();
             if (str.length() != 4) {
                 System.out.println("Please enter the valid word");
@@ -58,16 +59,21 @@ public class Word {
             char ch[] = str.toCharArray();
 
             int for_b = 0, for_c = 0;
+            for(int i=0;i<str.length();i++)
+            {
+                if(ch[i]==tofind[i])
+                {
+                    for_b++;
+                    tofind[i]='-';
+                }
+            }
             for (int i = 0; i < str.length(); i++) {
                 for (int j = 0; j < str.length(); j++) {
 
-                    if (ch[i] == tofind[j]) {
-                        if (i == j) {
-                            for_b++;
-                            break;
-                        } else {
-                            for_c++;
-                        }
+                    if (ch[i] == tofind[j]) 
+                    {
+                        for_c++;
+                        tofind[j]='-';
                     }
                 }
             }
