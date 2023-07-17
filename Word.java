@@ -45,13 +45,13 @@ public class Word {
         int k = 0;
         list = Insert(list, "____");
         Print(list);
-        String words[] = { /*"good", "late", */"flux"/*, "mate", "data", "word", "bold", "lord" */};
+        String words[] = { "good", "late", "flux", "mate", "data", "word", "bold", "lord" };
         int random_index = (int) (Math.random() * words.length);
-        //char tofind[] = words[random_index].toCharArray();
         while (true) {
             char tofind[] = words[random_index].toCharArray();
             String str = sc.nextLine();
-            if (str.length() != 4) {
+            if (str.length() != 4) 
+            {
                 System.out.println("Please enter the valid word");
                 continue;
             }
@@ -67,8 +67,10 @@ public class Word {
                     tofind[i]='-';
                 }
             }
-            for (int i = 0; i < str.length(); i++) {
-                for (int j = 0; j < str.length(); j++) {
+            for (int i = 0; i < str.length(); i++) 
+            {
+                for (int j = 0; j < str.length(); j++) 
+                {
 
                     if (ch[i] == tofind[j]) 
                     {
@@ -77,21 +79,30 @@ public class Word {
                     }
                 }
             }
-            if (for_b == 4) {
+            if (for_b == 4) 
+            {
                 System.out.print("Won");
                 break;
             }
-            if (for_b != 0) {
+            int temp=0;
+            if (for_b != 0) 
+            {
                 str += "-";
                 str += for_b;
+                temp=1;
                 str += "B";
             }
-            if (for_c != 0) {
+            if (for_c != 0) 
+            {
+                if(temp==0)
                 str += "-";
+                else
+                str += ",";
                 str += for_c;
                 str += "C";
             }
-            if (for_b == 0 && for_c == 0) {
+            if (for_b == 0 && for_c == 0) 
+            {
                 str += "-";
                 str += "N";
             }
